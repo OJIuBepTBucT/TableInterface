@@ -1,81 +1,76 @@
-//
-//  TableViewCell.swift
-//  tableInterface
-//
-//  Created by User on 30.08.2021.
-//
-
 import UIKit
 
 class TableViewCell: UITableViewCell {
-
-  var icon = UIImageView()
-  var titleLable = UILabel()
-  var texLabel = UILabel()
+  private var icon = UIImageView()
+  private var titleLable = UILabel()
+  private var underText = UILabel()
 
   override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
     super.init(style: style, reuseIdentifier: reuseIdentifier)
     addSubview(icon)
     addSubview(titleLable)
-    addSubview(texLabel)
+    addSubview(underText)
 
     configureIcon()
     configureText()
     configureTitle()
     setIcon()
     setTitle()
-    setTex()
+    setUnderText()
   }
 
   required init?(coder: NSCoder) {
     fatalError("init(coder:) has not been implemented")
   }
 
-  func configureIcon() {
+  private func configureIcon() {
     icon.layer.cornerRadius = 10
     icon.clipsToBounds = true
     icon.image = UIImage(named: "image0")
   }
 
-  func configureTitle() {
+  private func configureTitle() {
     titleLable.numberOfLines = 0
     titleLable.adjustsFontSizeToFitWidth = true
     titleLable.text = "hello"
   }
 
-  func configureText() {
-    texLabel.numberOfLines = 0
-    texLabel.adjustsFontSizeToFitWidth = true
-    texLabel.text = "hellouuu"
+  private func configureText() {
+    underText.numberOfLines = 0
+    underText.adjustsFontSizeToFitWidth = true
+    underText.text = "hellouuu"
   }
 
-  func setIcon() {
+  private func setIcon() {
     icon.translatesAutoresizingMaskIntoConstraints = false
     NSLayoutConstraint.activate([
       icon.centerYAnchor.constraint(equalTo: centerYAnchor),
+      icon.topAnchor.constraint(equalTo: topAnchor, constant: 5),
       icon.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
-      icon.heightAnchor.constraint(equalToConstant: 60),
-      icon.widthAnchor.constraint(equalTo: heightAnchor)
+      icon.heightAnchor.constraint(equalToConstant: 65),
+      icon.widthAnchor.constraint(equalToConstant: 75),
+      icon.bottomAnchor.constraint(equalTo: icon.bottomAnchor, constant: 5)
       ])
   }
 
-  func setTitle() {
+  private func setTitle() {
     titleLable.translatesAutoresizingMaskIntoConstraints = false
     NSLayoutConstraint.activate([
+      titleLable.topAnchor.constraint(equalTo: topAnchor, constant: 2),
       titleLable.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -20),
-      titleLable.leadingAnchor.constraint(equalTo: icon.leadingAnchor, constant: 150),
-      titleLable.heightAnchor.constraint(equalToConstant: 30),
+      titleLable.leadingAnchor.constraint(equalTo: icon.trailingAnchor, constant: 20),
+      titleLable.heightAnchor.constraint(equalToConstant: 40),
       titleLable.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12)
       ])
   }
 
-  func setTex() {
-    texLabel.translatesAutoresizingMaskIntoConstraints = false
+  private func setUnderText() {
+    underText.translatesAutoresizingMaskIntoConstraints = false
     NSLayoutConstraint.activate([
-      texLabel.topAnchor.constraint(equalTo: titleLable.bottomAnchor),
-      texLabel.leadingAnchor.constraint(equalTo: icon.leadingAnchor, constant: 150),
-      texLabel.heightAnchor.constraint(equalToConstant: 20),
-      texLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12)
+      underText.topAnchor.constraint(equalTo: titleLable.bottomAnchor),
+      underText.leadingAnchor.constraint(equalTo: icon.trailingAnchor, constant: 20),
+      underText.heightAnchor.constraint(equalToConstant: 30),
+      underText.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12)
       ])
   }
 }

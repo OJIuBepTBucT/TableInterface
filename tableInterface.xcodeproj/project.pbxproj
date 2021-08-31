@@ -13,8 +13,7 @@
 		CEAD625126DCDE460077C99E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEAD624F26DCDE460077C99E /* Main.storyboard */; };
 		CEAD625326DCDE480077C99E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CEAD625226DCDE480077C99E /* Assets.xcassets */; };
 		CEAD625626DCDE480077C99E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CEAD625426DCDE480077C99E /* LaunchScreen.storyboard */; };
-		CEAD625E26DCE0400077C99E /* TableScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAD625D26DCE0400077C99E /* TableScreen.swift */; };
-		CEAD626226DD5B4A0077C99E /* ExtAnchor.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAD626126DD5B4A0077C99E /* ExtAnchor.swift */; };
+		CEAD625E26DCE0400077C99E /* TableVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAD625D26DCE0400077C99E /* TableVC.swift */; };
 		CEAD626426DD5DDD0077C99E /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAD626326DD5DDD0077C99E /* TableViewCell.swift */; };
 /* End PBXBuildFile section */
 
@@ -27,8 +26,7 @@
 		CEAD625226DCDE480077C99E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		CEAD625526DCDE480077C99E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CEAD625726DCDE480077C99E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CEAD625D26DCE0400077C99E /* TableScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableScreen.swift; sourceTree = "<group>"; };
-		CEAD626126DD5B4A0077C99E /* ExtAnchor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExtAnchor.swift; sourceTree = "<group>"; };
+		CEAD625D26DCE0400077C99E /* TableVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableVC.swift; sourceTree = "<group>"; };
 		CEAD626326DD5DDD0077C99E /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -64,8 +62,7 @@
 			children = (
 				CEAD624926DCDE460077C99E /* AppDelegate.swift */,
 				CEAD624B26DCDE460077C99E /* SceneDelegate.swift */,
-				CEAD625D26DCE0400077C99E /* TableScreen.swift */,
-				CEAD626126DD5B4A0077C99E /* ExtAnchor.swift */,
+				CEAD625D26DCE0400077C99E /* TableVC.swift */,
 				CEAD626326DD5DDD0077C99E /* TableViewCell.swift */,
 				CEAD624D26DCDE460077C99E /* ViewController.swift */,
 				CEAD624F26DCDE460077C99E /* Main.storyboard */,
@@ -146,11 +143,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CEAD625E26DCE0400077C99E /* TableScreen.swift in Sources */,
+				CEAD625E26DCE0400077C99E /* TableVC.swift in Sources */,
 				CEAD624E26DCDE460077C99E /* ViewController.swift in Sources */,
 				CEAD624A26DCDE460077C99E /* AppDelegate.swift in Sources */,
 				CEAD626426DD5DDD0077C99E /* TableViewCell.swift in Sources */,
-				CEAD626226DD5B4A0077C99E /* ExtAnchor.swift in Sources */,
 				CEAD624C26DCDE460077C99E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

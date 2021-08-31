@@ -1,10 +1,3 @@
-//
-//  SceneDelegate.swift
-//  tableInterface
-//
-//  Created by User on 30.08.2021.
-//
-
 import UIKit
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
@@ -22,7 +15,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
       let window = UIWindow(windowScene: windowScene)
 
-      window.rootViewController = TableScreen()
+      window.rootViewController = TableVC()
       self.window = window
       window.makeKeyAndVisible()
     }
