@@ -4,8 +4,15 @@ import UIKit
 class TableVC: UIViewController {
   private let gradientL = CAGradientLayer()
   private let tableView = UITableView()
+  var base: [Base] = []
+  
+  struct  Cells {
+    static let tableViewCell = "TableViewCell"
+  }
+
   override func viewDidLoad() {
     super.viewDidLoad()
+    base = fetchData()
     setupGradient()
     configureTableView()
   }
@@ -24,6 +31,7 @@ class TableVC: UIViewController {
     tableView.anchorTable(to: view)
     tableView.layer.cornerRadius = 15
     tableView.layer.masksToBounds = true
+    tableView.register(TableViewCell.self, forCellReuseIdentifier: Cells.tableViewCell)
   }
 
   private func setTableViewDelegate() {
@@ -34,7 +42,7 @@ class TableVC: UIViewController {
 
 extension TableVC: UITableViewDelegate, UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return section > 0 ? 3 : 4
+    return section > 0 ? 4 : 3
   }
 
   func numberOfSections(in tableView: UITableView) -> Int {
@@ -63,3 +71,16 @@ extension UIView {
   }
 }
 
+extension TableVC {
+
+  func fetchData() -> [Base] {
+    let cell1 = Base(image: Images.injection, title: "COVID-19 VACCINATION 1 Dose \nPublic (18+) (Astrazeneca)", subtitle: " ")
+    let cell2 = Base(image: Images.clock, title: "17 August 2021", subtitle: "Operation time: 08:00 - 14:00")
+    let cell3 = Base(image: Images.placeholder, title: "Senggrong Hospital", subtitle: "Bululawang-Senggrong Street, Senggrong \nBululawang, Kabupaten Malang")
+    let cell4 = Base(image: Images.user, title: "Muhammad Yanto", subtitle: "3510290928394506")
+    let cell5 = Base(image: Images.phone, title: "083123456789", subtitle: " ")
+    let cell6 = Base(image: Images.placeholder, title: "Maestro Reload Bululawang, Senggrong, \nKabupaten Malang", subtitle: " ")
+
+    return [cell1, cell2, cell3, cell4, cell5, cell6]
+  }
+}
