@@ -6,5 +6,5 @@ struct Images {
   static let clock = UIImage(named: "clock")!
   static let placeholder = UIImage(named: "placeholder")!
   static let user = UIImage(named: "user")!
-  static let phone = UIImage(named: "phone")!
+  static let phone = UIImage(named: "telephone")!
 }

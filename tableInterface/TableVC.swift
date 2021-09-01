@@ -5,8 +5,8 @@ class TableVC: UIViewController {
   private let gradientL = CAGradientLayer()
   private let tableView = UITableView()
   var base: [Base] = []
-  
-  struct  Cells {
+
+  struct Cells {
     static let tableViewCell = "TableViewCell"
   }
 
@@ -50,7 +50,10 @@ extension TableVC: UITableViewDelegate, UITableViewDataSource {
   }
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    return TableViewCell()
+    let cell = tableView.dequeueReusableCell(withIdentifier: Cells.tableViewCell) as! TableViewCell
+    let base = base[indexPath.row]
+    cell.set(base: base)
+    return cell
   }
 
   func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
