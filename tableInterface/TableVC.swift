@@ -43,18 +43,18 @@ class TableVC: UIViewController {
     tableView.layer.masksToBounds = true
     tableView.register(TableViewCell.self, forCellReuseIdentifier: Cells.tableViewCell)
   }
-  
 
-    func anchorTable() {
-      tableView.translatesAutoresizingMaskIntoConstraints = false
-      NSLayoutConstraint.activate([
-        tableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 150),
-        tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
-        tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
-        tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -110)
-        ])
-    }
-  
+
+  func anchorTable() {
+    tableView.translatesAutoresizingMaskIntoConstraints = false
+    NSLayoutConstraint.activate([
+      tableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 150),
+      tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
+      tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
+      tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -110)
+      ])
+  }
+
 
   private func setTableViewDelegate() {
     tableView.delegate = self

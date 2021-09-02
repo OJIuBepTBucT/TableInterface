@@ -35,25 +35,28 @@ class TableViewCell: UITableViewCell {
   }
 
   private func configureTitle() {
+    let bondFont = UIFont.boldSystemFont(ofSize: UIFont.labelFontSize)
     titleLable.numberOfLines = 0
     titleLable.adjustsFontSizeToFitWidth = true
+    titleLable.font = bondFont
   }
 
   private func configureText() {
     underText.numberOfLines = 0
     underText.adjustsFontSizeToFitWidth = true
-   // underText.font = 
+    underText.font = underText.font.withSize(15)
+    underText.textColor = .systemGray
   }
 
   private func setIcon() {
     icon.translatesAutoresizingMaskIntoConstraints = false
     NSLayoutConstraint.activate([
       icon.centerYAnchor.constraint(equalTo: centerYAnchor),
-      icon.topAnchor.constraint(equalTo: topAnchor, constant: 5),
-      icon.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 10),
-      icon.heightAnchor.constraint(equalToConstant: 65),
-      icon.widthAnchor.constraint(equalToConstant: 75),
-      icon.bottomAnchor.constraint(equalTo: icon.bottomAnchor, constant: 5)
+      icon.topAnchor.constraint(equalTo: topAnchor, constant: 25),
+      icon.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 40),
+      icon.heightAnchor.constraint(equalToConstant: 30),
+      icon.widthAnchor.constraint(equalToConstant: 30),
+      icon.bottomAnchor.constraint(equalTo: icon.bottomAnchor, constant: 25)
       ])
   }
 
