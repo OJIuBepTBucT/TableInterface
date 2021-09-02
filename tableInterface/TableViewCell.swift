@@ -51,8 +51,8 @@ class TableViewCell: UITableViewCell {
   private func setIcon() {
     icon.translatesAutoresizingMaskIntoConstraints = false
     NSLayoutConstraint.activate([
-      icon.centerYAnchor.constraint(equalTo: centerYAnchor),
-      icon.topAnchor.constraint(equalTo: topAnchor, constant: 25),
+      icon.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -20),
+      icon.topAnchor.constraint(equalTo: topAnchor, constant: 5),
       icon.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 40),
       icon.heightAnchor.constraint(equalToConstant: 30),
       icon.widthAnchor.constraint(equalToConstant: 30),
