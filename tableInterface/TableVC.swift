@@ -4,7 +4,7 @@ import UIKit
 class TableVC: UIViewController {
   private let gradientL = CAGradientLayer()
   private let tableView = UITableView()
-  var base: [Base] = []
+  var dataCell: [DataCell] = []
 
   struct Cells {
     static let tableViewCell = "TableViewCell"
@@ -12,9 +12,19 @@ class TableVC: UIViewController {
 
   override func viewDidLoad() {
     super.viewDidLoad()
-    base = fetchData()
+    dataCell = fetchData()
     setupGradient()
     configureTableView()
+  }
+
+  func fetchData() -> [DataCell] {
+    return [
+      DataCell(image: Images.injection, title: "COVID-19 VACCINATION 1 Dose \nPublic (18+) (Astrazeneca)", subtitle: " "),
+      DataCell(image: Images.clock, title: "17 August 2021", subtitle: "Operation time: 08:00 - 14:00"),
+      DataCell(image: Images.placeholder, title: "Senggrong Hospital", subtitle: "Bululawang-Senggrong Street, Senggrong \nBululawang, Kabupaten Malang"),
+      DataCell(image: Images.user, title: "Muhammad Yanto", subtitle: "3510290928394506"),
+      DataCell(image: Images.phone, title: "083123456789", subtitle: " "),
+      DataCell(image: Images.placeholder, title: "Maestro Reload Bululawang, Senggrong, \nKabupaten Malang", subtitle: " ")]
   }
 
   private func setupGradient() {
@@ -26,13 +36,25 @@ class TableVC: UIViewController {
   }
 
   private func configureTableView() {
-    view.addSubview(tableView)
+    self.view.addSubview(tableView)
     setTableViewDelegate()
-    tableView.anchorTable(to: view)
+    anchorTable()
     tableView.layer.cornerRadius = 15
     tableView.layer.masksToBounds = true
     tableView.register(TableViewCell.self, forCellReuseIdentifier: Cells.tableViewCell)
   }
+  
+
+    func anchorTable() {
+      tableView.translatesAutoresizingMaskIntoConstraints = false
+      NSLayoutConstraint.activate([
+        tableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 150),
+        tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
+        tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
+        tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -110)
+        ])
+    }
+  
 
   private func setTableViewDelegate() {
     tableView.delegate = self
@@ -51,7 +73,7 @@ extension TableVC: UITableViewDelegate, UITableViewDataSource {
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
     let cell = tableView.dequeueReusableCell(withIdentifier: Cells.tableViewCell) as! TableViewCell
-    let base = base[indexPath.row]
+    let base = dataCell[indexPath.row]
     cell.set(base: base)
     return cell
   }
@@ -62,28 +84,4 @@ extension TableVC: UITableViewDelegate, UITableViewDataSource {
 
 }
 
-extension UIView {
-  func anchorTable(to superView: UIView) {
-    translatesAutoresizingMaskIntoConstraints = false
-    NSLayoutConstraint.activate([
-      topAnchor.constraint(equalTo: superView.topAnchor, constant: 150),
-      leadingAnchor.constraint(equalTo: superView.leadingAnchor, constant: 15),
-      trailingAnchor.constraint(equalTo: superView.trailingAnchor, constant: -15),
-      bottomAnchor.constraint(equalTo: superView.bottomAnchor, constant: -110)
-      ])
-  }
-}
 
-extension TableVC {
-
-  func fetchData() -> [Base] {
-    let cell1 = Base(image: Images.injection, title: "COVID-19 VACCINATION 1 Dose \nPublic (18+) (Astrazeneca)", subtitle: " ")
-    let cell2 = Base(image: Images.clock, title: "17 August 2021", subtitle: "Operation time: 08:00 - 14:00")
-    let cell3 = Base(image: Images.placeholder, title: "Senggrong Hospital", subtitle: "Bululawang-Senggrong Street, Senggrong \nBululawang, Kabupaten Malang")
-    let cell4 = Base(image: Images.user, title: "Muhammad Yanto", subtitle: "3510290928394506")
-    let cell5 = Base(image: Images.phone, title: "083123456789", subtitle: " ")
-    let cell6 = Base(image: Images.placeholder, title: "Maestro Reload Bululawang, Senggrong, \nKabupaten Malang", subtitle: " ")
-
-    return [cell1, cell2, cell3, cell4, cell5, cell6]
-  }
-}

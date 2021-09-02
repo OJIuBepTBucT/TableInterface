@@ -1,7 +1,7 @@
 import Foundation
 import UIKit
 
-struct Base {
+struct DataCell {
   var image: UIImage
   var title: String
   var subtitle: String

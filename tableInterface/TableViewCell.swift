@@ -23,7 +23,7 @@ class TableViewCell: UITableViewCell {
     fatalError("init(coder:) has not been implemented")
   }
 
-  func set(base: Base) {
+  func set(base: DataCell) {
     icon.image = base.image
     titleLable.text = base.title
     underText.text = base.subtitle
@@ -32,19 +32,17 @@ class TableViewCell: UITableViewCell {
   private func configureIcon() {
     icon.layer.cornerRadius = 10
     icon.clipsToBounds = true
-    //  icon.image = UIImage(named: "image0")
   }
 
   private func configureTitle() {
     titleLable.numberOfLines = 0
     titleLable.adjustsFontSizeToFitWidth = true
-    //  titleLable.text = "hello"
   }
 
   private func configureText() {
     underText.numberOfLines = 0
     underText.adjustsFontSizeToFitWidth = true
-    //  underText.text = "hellouuu"
+   // underText.font = 
   }
 
   private func setIcon() {
