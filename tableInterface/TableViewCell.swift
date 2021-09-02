@@ -32,6 +32,7 @@ class TableViewCell: UITableViewCell {
   private func configureIcon() {
     icon.layer.cornerRadius = 10
     icon.clipsToBounds = true
+    icon.adjustsImageSizeForAccessibilityContentSizeCategory = true
   }
 
   private func configureTitle() {
