@@ -54,8 +54,8 @@ class TableVC: UIViewController {
     tableView.translatesAutoresizingMaskIntoConstraints = false
     NSLayoutConstraint.activate([
       tableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 80),
-      tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 15),
-      tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -15),
+      tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
+      tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
       tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -10)
       ])
   }
@@ -69,7 +69,7 @@ class TableVC: UIViewController {
 
 extension TableVC: UITableViewDelegate, UITableViewDataSource {
   func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-    return section > 0 ? 4 : 3
+    return section > 0 ? 3 : 3
   }
 
   func numberOfSections(in tableView: UITableView) -> Int {
@@ -108,7 +108,7 @@ extension TableVC: UITableViewDelegate, UITableViewDataSource {
     footerButton.backgroundColor = UIColor.systemTeal
     footerButton.layer.cornerRadius = 15
     footerButton.layer.masksToBounds = true
-    footerButton.frame = CGRect(x: 5, y: 30, width: 350, height: 70)
+    footerButton.frame = CGRect(x: 5, y: 30, width: 350, height: 60)
     footerView.addSubview(footerButton)
 
     return section > 0 ? footerView : nil

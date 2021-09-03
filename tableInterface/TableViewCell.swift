@@ -39,7 +39,7 @@ class TableViewCell: UITableViewCell {
     let bondFont = UIFont.boldSystemFont(ofSize: UIFont.labelFontSize)
     titleLable.numberOfLines = 0
     titleLable.adjustsFontSizeToFitWidth = true
-    titleLable.font = bondFont
+    titleLable.font = bondFont.withSize(30)
   }
 
   private func configureUnderText() {
@@ -53,10 +53,10 @@ class TableViewCell: UITableViewCell {
     icon.translatesAutoresizingMaskIntoConstraints = false
     NSLayoutConstraint.activate([
       icon.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -20),
-      icon.topAnchor.constraint(equalTo: topAnchor, constant: 9),
+      icon.topAnchor.constraint(equalTo: topAnchor, constant: 20),
       icon.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 40),
-      icon.heightAnchor.constraint(equalToConstant: 30),
-      icon.widthAnchor.constraint(equalToConstant: 30),
+      icon.heightAnchor.constraint(equalToConstant: 20),
+      icon.widthAnchor.constraint(equalToConstant: 20),
       icon.bottomAnchor.constraint(equalTo: icon.bottomAnchor, constant: 25)
       ])
   }
@@ -64,18 +64,18 @@ class TableViewCell: UITableViewCell {
   private func setTitle() {
     titleLable.translatesAutoresizingMaskIntoConstraints = false
     NSLayoutConstraint.activate([
-      titleLable.topAnchor.constraint(equalTo: topAnchor, constant: 9),
+      titleLable.topAnchor.constraint(equalTo: topAnchor, constant: 20),
       titleLable.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -20),
       titleLable.leadingAnchor.constraint(equalTo: icon.trailingAnchor, constant: 30),
-      titleLable.heightAnchor.constraint(equalToConstant: 60),
-      titleLable.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12)
+      titleLable.heightAnchor.constraint(equalToConstant: 30),
+      titleLable.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -6)
       ])
   }
 
   private func setUnderText() {
     underText.translatesAutoresizingMaskIntoConstraints = false
     NSLayoutConstraint.activate([
-      underText.topAnchor.constraint(equalTo: titleLable.bottomAnchor),
+      underText.topAnchor.constraint(equalTo: titleLable.bottomAnchor, constant: 5),
       underText.leadingAnchor.constraint(equalTo: icon.trailingAnchor, constant: 30),
       underText.heightAnchor.constraint(equalToConstant: 30),
       underText.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12)
