@@ -6,6 +6,8 @@ class TableVC: UIViewController {
   private let tableView = UITableView(frame: .zero, style: .insetGrouped)
   var dataCell: [DataCell] = []
   private let titleTable = TitleTableView()
+  let color = UIColor(named: "Color")
+  let colorTwo = UIColor(named: "Color2")
   struct Cells {
     static let tableViewCell = "TableViewCell"
   }
@@ -30,7 +32,7 @@ class TableVC: UIViewController {
 
   private func setupGradient() {
     gradientL.frame = self.view.bounds
-    gradientL.colors = [UIColor.systemTeal.cgColor, UIColor.white.cgColor]
+    gradientL.colors = [#colorLiteral(red: 0.8113234639, green: 0.8905510306, blue: 0.9940212369, alpha: 1).cgColor, #colorLiteral(red: 0.988163054, green: 0.9882777333, blue: 0.9881102443, alpha: 1).cgColor]
     gradientL.startPoint = CGPoint(x: 0.0, y: 0.0)
     gradientL.endPoint = CGPoint (x: 1.0, y: 1.0)
     self.view.layer.insertSublayer(gradientL, at: 0)
