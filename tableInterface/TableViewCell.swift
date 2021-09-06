@@ -7,10 +7,6 @@ class TableViewCell: UITableViewCell {
 
   override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
     super.init(style: style, reuseIdentifier: reuseIdentifier)
-    addSubview(icon)
-    addSubview(titleLable)
-    addSubview(underText)
-
     configureIcon()
     configureUnderText()
     configureTitle()
@@ -30,55 +26,53 @@ class TableViewCell: UITableViewCell {
   }
 
   private func configureIcon() {
+    addSubview(icon)
     icon.layer.cornerRadius = 10
     icon.clipsToBounds = true
-    icon.adjustsImageSizeForAccessibilityContentSizeCategory = true
+    icon.contentMode = .scaleAspectFit
   }
 
   private func configureTitle() {
+    addSubview(titleLable)
     let bondFont = UIFont.boldSystemFont(ofSize: UIFont.labelFontSize)
     titleLable.numberOfLines = 0
-    titleLable.adjustsFontSizeToFitWidth = true
-    titleLable.font = bondFont.withSize(30)
+    titleLable.font = bondFont
+    titleLable.font = titleLable.font.withSize(13)
   }
 
   private func configureUnderText() {
+    addSubview(underText)
     underText.numberOfLines = 0
-    underText.adjustsFontSizeToFitWidth = true
-    underText.font = underText.font.withSize(15)
+    underText.font = underText.font.withSize(12)
     underText.textColor = .systemGray
   }
 
   private func setIcon() {
     icon.translatesAutoresizingMaskIntoConstraints = false
     NSLayoutConstraint.activate([
-      icon.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -20),
-      icon.topAnchor.constraint(equalTo: topAnchor, constant: 20),
+      icon.topAnchor.constraint(equalTo: topAnchor, constant: 30),
       icon.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 40),
-      icon.heightAnchor.constraint(equalToConstant: 20),
-      icon.widthAnchor.constraint(equalToConstant: 20),
-      icon.bottomAnchor.constraint(equalTo: icon.bottomAnchor, constant: 25)
+      icon.heightAnchor.constraint(equalToConstant: 30),
+      icon.widthAnchor.constraint(equalToConstant: 30),
       ])
   }
 
   private func setTitle() {
     titleLable.translatesAutoresizingMaskIntoConstraints = false
     NSLayoutConstraint.activate([
-      titleLable.topAnchor.constraint(equalTo: topAnchor, constant: 20),
-      titleLable.centerYAnchor.constraint(equalTo: centerYAnchor, constant: -20),
+      titleLable.topAnchor.constraint(equalTo: topAnchor, constant: 30),
       titleLable.leadingAnchor.constraint(equalTo: icon.trailingAnchor, constant: 30),
-      titleLable.heightAnchor.constraint(equalToConstant: 30),
-      titleLable.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -6)
+      titleLable.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -40)
       ])
   }
 
   private func setUnderText() {
     underText.translatesAutoresizingMaskIntoConstraints = false
     NSLayoutConstraint.activate([
-      underText.topAnchor.constraint(equalTo: titleLable.bottomAnchor, constant: 5),
+      underText.topAnchor.constraint(equalTo: titleLable.bottomAnchor, constant: 8),
       underText.leadingAnchor.constraint(equalTo: icon.trailingAnchor, constant: 30),
-      underText.heightAnchor.constraint(equalToConstant: 30),
-      underText.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -12)
+      underText.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8),
+      underText.bottomAnchor.constraint(equalTo: bottomAnchor, constant: -25)
       ])
   }
 }

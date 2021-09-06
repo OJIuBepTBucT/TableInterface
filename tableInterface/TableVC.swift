@@ -47,15 +47,16 @@ class TableVC: UIViewController {
     tableView.isScrollEnabled = false
     tableView.register(TableViewCell.self, forCellReuseIdentifier: Cells.tableViewCell)
     tableView.backgroundColor = .none
+    tableView.separatorStyle = .none
   }
 
 
   func anchorTable() {
     tableView.translatesAutoresizingMaskIntoConstraints = false
     NSLayoutConstraint.activate([
-      tableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 80),
-      tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 10),
-      tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
+      tableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 85),
+      tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 5),
+      tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -5),
       tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -10)
       ])
   }
@@ -77,7 +78,7 @@ extension TableVC: UITableViewDelegate, UITableViewDataSource {
   }
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: Cells.tableViewCell) as! TableViewCell
+    let cell = tableView.dequeueReusableCell(withIdentifier: Cells.tableViewCell, for: indexPath) as! TableViewCell
     let base = dataCell[indexPath.row]
     cell.set(base: base)
     return cell
@@ -93,7 +94,7 @@ extension TableVC: UITableViewDelegate, UITableViewDataSource {
   }
 
   func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-    return 40
+    return 30
   }
 
   func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
@@ -101,15 +102,9 @@ extension TableVC: UITableViewDelegate, UITableViewDataSource {
   }
 
   func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-    let footerView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 40))
-    let footerButton = UIButton(type: .custom)
-    footerButton.setTitle("Save Ticket", for: .normal)
-    footerButton.setTitleColor(UIColor.white, for: .normal)
-    footerButton.backgroundColor = UIColor.systemTeal
-    footerButton.layer.cornerRadius = 15
-    footerButton.layer.masksToBounds = true
-    footerButton.frame = CGRect(x: 5, y: 30, width: 350, height: 60)
-    footerView.addSubview(footerButton)
+    let footerView = UIView(frame: CGRect(x: 0, y: 0, width: view.frame.size.width, height: 30))
+    let button = FooterTableViewButton()
+    footerView.addSubview(button)
 
     return section > 0 ? footerView : nil
 

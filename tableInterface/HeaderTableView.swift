@@ -1,8 +1,7 @@
 import UIKit
 
 class HeaderTableView: UIView {
-
-  let label = UILabel(frame: CGRect(x: 0, y: 5, width: 400, height: 30))
+  private let label = UILabel(frame: CGRect(x: 0, y: -5, width: 400, height: 30))
 
   override init(frame: CGRect) {
     super.init(frame: frame)
@@ -14,7 +13,7 @@ class HeaderTableView: UIView {
     fatalError("init(coder:) has not been implemented")
   }
 
-  func configureLabel() {
+  private func configureLabel() {
     let bondFont = UIFont.boldSystemFont(ofSize: UIFont.labelFontSize)
     label.numberOfLines = 0
     label.adjustsFontSizeToFitWidth = true

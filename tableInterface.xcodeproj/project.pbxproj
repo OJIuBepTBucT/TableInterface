@@ -19,6 +19,7 @@
 		CEAD626826DF67900077C99E /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAD626726DF67900077C99E /* Model.swift */; };
 		CEAD626C26E0FE960077C99E /* HeaderTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAD626B26E0FE960077C99E /* HeaderTableView.swift */; };
 		CEAD626E26E22ECF0077C99E /* TitleTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAD626D26E22ECF0077C99E /* TitleTableView.swift */; };
+		CEAD627026E616A40077C99E /* FooterTableViewButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CEAD626F26E616A30077C99E /* FooterTableViewButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -36,6 +37,7 @@
 		CEAD626726DF67900077C99E /* Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Model.swift; sourceTree = "<group>"; };
 		CEAD626B26E0FE960077C99E /* HeaderTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTableView.swift; sourceTree = "<group>"; };
 		CEAD626D26E22ECF0077C99E /* TitleTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TitleTableView.swift; sourceTree = "<group>"; };
+		CEAD626F26E616A30077C99E /* FooterTableViewButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FooterTableViewButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 				CEAD626326DD5DDD0077C99E /* TableViewCell.swift */,
 				CEAD626D26E22ECF0077C99E /* TitleTableView.swift */,
 				CEAD626B26E0FE960077C99E /* HeaderTableView.swift */,
+				CEAD626F26E616A30077C99E /* FooterTableViewButton.swift */,
 				CEAD626726DF67900077C99E /* Model.swift */,
 				CEAD626526DF64E90077C99E /* ConstantsImages.swift */,
 				CEAD624D26DCDE460077C99E /* ViewController.swift */,
@@ -157,6 +160,7 @@
 			files = (
 				CEAD626826DF67900077C99E /* Model.swift in Sources */,
 				CEAD625E26DCE0400077C99E /* TableVC.swift in Sources */,
+				CEAD627026E616A40077C99E /* FooterTableViewButton.swift in Sources */,
 				CEAD626626DF64E90077C99E /* ConstantsImages.swift in Sources */,
 				CEAD624E26DCDE460077C99E /* ViewController.swift in Sources */,
 				CEAD624A26DCDE460077C99E /* AppDelegate.swift in Sources */,
