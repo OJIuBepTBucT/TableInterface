@@ -19,6 +19,6 @@ class FooterTableViewButton: UIView {
     footerButton.backgroundColor = UIColor.systemTeal
     footerButton.layer.cornerRadius = 15
     footerButton.layer.masksToBounds = true
-    footerButton.frame = CGRect(x: 5, y: 50, width: 370, height: 60)
+    footerButton.frame = CGRect(x: 5, y: 45, width: 370, height: 60)
   }
 }

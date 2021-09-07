@@ -20,7 +20,7 @@ class TitleTableView: UIView {
     let bondFont = UIFont.boldSystemFont(ofSize: UIFont.labelFontSize)
     titleTable.numberOfLines = 0
     titleTable.font = bondFont
-    titleTable.font = titleTable.font.withSize(25)
+    titleTable.font = titleTable.font.withSize(29)
     titleTable.text = "Register Success"
   }
 
@@ -35,7 +35,7 @@ class TitleTableView: UIView {
   private func setTitleTable() {
     titleTable.translatesAutoresizingMaskIntoConstraints = false
     NSLayoutConstraint.activate([
-      titleTable.topAnchor.constraint(equalTo: topAnchor, constant: 35),
+      titleTable.topAnchor.constraint(equalTo: topAnchor, constant: 50),
       titleTable.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 30),
       ])
   }

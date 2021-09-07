@@ -4,7 +4,7 @@ import UIKit
 class TableVC: UIViewController {
   private let gradientL = CAGradientLayer()
   private let tableView = UITableView(frame: .zero, style: .insetGrouped)
-  var dataCell: [DataCell] = []
+  var dataCell: [[DataCell]] = [[]]
   private let titleTable = TitleTableView()
   let color = UIColor(named: "Color")
   let colorTwo = UIColor(named: "Color2")
@@ -20,14 +20,17 @@ class TableVC: UIViewController {
     self.view.addSubview(titleTable)
   }
 
-  func fetchData() -> [DataCell] {
-    return [
-      DataCell(image: Images.injection, title: "COVID-19 VACCINATION 1 Dose Public (18+) (Astrazeneca)", subtitle: " "),
+  func fetchData() -> [[DataCell]] {
+    let data = [
+      [DataCell(image: Images.injection, title: "COVID-19 VACCINATION 1 Dose Public (18+) (Astrazeneca)", subtitle: " "),
       DataCell(image: Images.clock, title: "17 August 2021", subtitle: "Operation time: 08:00 - 14:00"),
-      DataCell(image: Images.placeholder, title: "Senggrong Hospital", subtitle: "Bululawang-Senggrong Street, Senggrong Bululawang, Kabupaten Malang"),
-      DataCell(image: Images.user, title: "Muhammad Yanto", subtitle: "3510290928394506"),
+      DataCell(image: Images.placeholder, title: "Senggrong Hospital", subtitle: "Bululawang-Senggrong Street, Senggrong Bululawang, Kabupaten Malang")],
+      
+      [DataCell(image: Images.user, title: "Muhammad Yanto", subtitle: "3510290928394506"),
       DataCell(image: Images.phone, title: "083123456789", subtitle: " "),
       DataCell(image: Images.placeholder, title: "Maestro Reload Bululawang, Senggrong, Kabupaten Malang", subtitle: " ")]
+    ]
+  return data
   }
 
   private func setupGradient() {
@@ -54,10 +57,10 @@ class TableVC: UIViewController {
   func anchorTable() {
     tableView.translatesAutoresizingMaskIntoConstraints = false
     NSLayoutConstraint.activate([
-      tableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 85),
+      tableView.topAnchor.constraint(equalTo: view.topAnchor, constant: 100),
       tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 5),
       tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -5),
-      tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -10)
+      tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: -5)
       ])
   }
 
@@ -78,10 +81,11 @@ extension TableVC: UITableViewDelegate, UITableViewDataSource {
   }
 
   func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-    let cell = tableView.dequeueReusableCell(withIdentifier: Cells.tableViewCell, for: indexPath) as! TableViewCell
-    let base = dataCell[indexPath.row]
-    cell.set(base: base)
-    return cell
+    let cell = tableView.dequeueReusableCell(withIdentifier: Cells.tableViewCell) as? TableViewCell
+    let base = dataCell[indexPath.section][indexPath.row]
+    cell?.set(base: base)
+
+    return cell!
   }
 
   func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
