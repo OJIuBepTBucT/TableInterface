@@ -1,7 +1,7 @@
 import UIKit
 
 class FooterTableViewButton: UIView {
-  let footerButton = UIButton(type: .custom)
+ private let footerButton = UIButton(type: .custom)
 
   override init(frame: CGRect) {
     super.init(frame: frame)
